@@ -1,0 +1,138 @@
+.fm-emopicker__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-muted);
+  border-radius: var(--radius-pill);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+.fm-emopicker__search input {
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: var(--text);
+  width: 100%;
+  font-family: var(--font-sans);
+}
+
+.fm-emopicker__chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+.fm-emopicker__chip {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+.fm-emopicker__chip.is-active {
+  background: var(--text);
+  color: var(--bg-1);
+  border-color: var(--text);
+}
+
+.fm-emopicker__groups {
+  display: grid;
+  gap: 18px;
+}
+.fm-emopicker__group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.fm-emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.fm-emotion-grid__item {
+  background: var(--surface-muted);
+  border-radius: 14px;
+  padding: 13px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+}
+.fm-emotion-grid__item:hover {
+  border-color: var(--accent-solid);
+}
+.fm-emotion-grid__item.is-selected {
+  border-color: var(--accent-solid);
+  background: var(--surface);
+}
+.fm-emotion-grid__ampel {
+  position: absolute;
+  bottom: 0;
+  right: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-muted);
+}
+
+.fm-emotion-grid__item--add {
+  border-style: dashed;
+  border-color: var(--border-soft);
+  color: var(--text-faint);
+  background: transparent;
+}
+
+.fm-custom-emotion {
+  background: var(--surface-muted);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 4px;
+}
+.fm-custom-emotion__emojis {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+.fm-custom-emotion__emoji {
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 6px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.fm-custom-emotion__emoji.is-selected {
+  border-color: var(--accent-solid);
+}
+
+.fm-emopicker__confirm {
+  position: sticky;
+  bottom: -2px;
+  margin-top: 14px;
+  padding-top: 10px;
+  background: linear-gradient(0deg, var(--surface) 60%, transparent);
+}
+.fm-emopicker__confirm button {
+  width: 100%;
+  justify-content: center;
+}

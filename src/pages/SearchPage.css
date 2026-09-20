@@ -1,0 +1,16 @@
+.fm-search-rings {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #ffd400 0 21%,
+    rgba(255, 212, 0, 0.22) 22% 45%,
+    rgba(255, 110, 182, 0.17) 46% 68%,
+    transparent 69%
+  );
+  display: grid;
+  place-items: center;
+  animation: fmPulse 1.6s ease-in-out infinite;
+  margin: 0 auto;
+}

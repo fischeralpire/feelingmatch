@@ -1,0 +1,559 @@
+.fm-blobs {
+  position: relative;
+  height: 206px;
+  margin: 4px 0 0;
+}
+.fm-blobs--home {
+  height: 172px;
+  margin-top: 4px;
+}
+
+.fm-blob-wrap {
+  position: absolute;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+.fm-blob-shape {
+  position: relative;
+  transform-origin: 50% 65%;
+  box-shadow: inset 0 -12px 24px rgba(0, 0, 0, 0.1);
+  animation: fmFloat 5.8s ease-in-out infinite;
+}
+
+/* Splash positions */
+.fm-blob-wrap--blue {
+  left: 13%;
+  top: 34px;
+  transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * 10px)) rotate(9deg);
+}
+.fm-blob-wrap--green {
+  left: 22%;
+  top: 96px;
+  transform: translate(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 16px));
+}
+.fm-blob-wrap--yellow {
+  left: 40%;
+  top: 26px;
+  z-index: 3;
+  transform: translate(calc(var(--mx, 0) * 18px), calc(var(--my, 0) * 12px));
+}
+.fm-blob-wrap--black {
+  right: 6%;
+  top: 10px;
+  transform: translate(calc(var(--mx, 0) * 22px), calc(var(--my, 0) * -8px)) rotate(-6deg);
+}
+.fm-blob-wrap--pink {
+  right: 4%;
+  top: 108px;
+  z-index: 4;
+  transform: translate(calc(var(--mx, 0) * -20px), calc(var(--my, 0) * -12px));
+}
+
+/* Home positions (eigene "-h"-Namen, optisch/CSS-technisch getrennt, damit
+   Anpassungen für Home nie die Login-Seite verändern). Enger gruppiert als
+   ursprünglich: Schwarz weiter rechts, Pink näher an die linke Gruppe
+   (blau/grün/gelb) herangezogen. */
+.fm-blob-wrap--blue-h {
+  left: 16%;
+  top: 34px;
+  transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * 10px)) rotate(9deg);
+}
+.fm-blob-wrap--green-h {
+  left: 25%;
+  top: 96px;
+  transform: translate(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 16px));
+}
+.fm-blob-wrap--yellow-h {
+  left: 42%;
+  top: 26px;
+  z-index: 3;
+  transform: translate(calc(var(--mx, 0) * 18px), calc(var(--my, 0) * 12px));
+}
+.fm-blob-wrap--black-h {
+  right: 7%;
+  top: 10px;
+  transform: translate(calc(var(--mx, 0) * 22px), calc(var(--my, 0) * -8px)) rotate(-6deg);
+}
+.fm-blob-wrap--pink-h {
+  right: 18%;
+  top: 108px;
+  z-index: 4;
+  transform: translate(calc(var(--mx, 0) * -20px), calc(var(--my, 0) * -12px));
+}
+
+
+/* Alte Home-Cluster-Positionen (aktuell ungenutzt, variant="home" nutzt die
+   "-h"-Namen oben; hier nur als Fallback falls das Lila/Orange-Layout
+   künftig wieder gebraucht wird). */
+.fm-blob-wrap--yellow-sm {
+  left: 46%;
+  top: 0px;
+  z-index: 1;
+  transform: translate(calc(var(--mx, 0) * 14px), calc(var(--my, 0) * 10px));
+}
+.fm-blob-wrap--purple-sm {
+  left: 70%;
+  top: 30px;
+  z-index: 2;
+  transform: translate(calc(var(--mx, 0) * -16px), calc(var(--my, 0) * -9px));
+}
+.fm-blob-wrap--green-sm {
+  left: 6%;
+  top: 26px;
+  z-index: 3;
+  transform: translate(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 12px));
+}
+.fm-blob-wrap--orange-sm {
+  left: 26%;
+  top: 58px;
+  z-index: 4;
+  transform: translate(calc(var(--mx, 0) * 12px), calc(var(--my, 0) * -8px));
+}
+.fm-blob-wrap--blue-sm {
+  left: 60%;
+  top: 62px;
+  z-index: 5;
+  transform: translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * 9px)) rotate(4deg);
+}
+
+/* Shapes (Splash/Login – unverändertes Original) */
+.fm-blob-shape--blue {
+  width: 80px;
+  height: 122px;
+  border-radius: 38px 42px 38px 34px;
+  background: linear-gradient(145deg, #3a86ff, #1f6feb);
+  animation-delay: 0.6s;
+  --eye-color: #fff;
+}
+.fm-blob-shape--green {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 48% 46% 52%;
+  background: linear-gradient(145deg, #22c97a, #12a45c);
+  animation-delay: 0.9s;
+  --eye-gap: 16px;
+  --eye-w: 14px;
+  --eye-h: 7px;
+  --eye-color: #fff;
+}
+.fm-blob-shape--yellow {
+  width: 126px;
+  height: 126px;
+  border-radius: 46% 46% 42% 42%;
+  background: linear-gradient(145deg, #ffd84a, #f9b500);
+  animation-delay: 0.2s;
+  --eye-gap: 20px;
+  --eye-w: 15px;
+  --eye-h: 7px;
+  --eye-border: 3.5px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--black {
+  width: 64px;
+  height: 100px;
+  border-radius: 34px;
+  background: #15171c;
+  animation-delay: 1.1s;
+  --eye-gap: 11px;
+  --eye-w: 11px;
+  --eye-h: 5px;
+  --eye-color: #3a86ff;
+}
+.fm-blob-shape--pink {
+  width: 118px;
+  height: 86px;
+  border-radius: 60px 60px 28px 28px;
+  background: linear-gradient(145deg, #ff7d92, #ff5c6e);
+  animation-delay: 0.3s;
+  --eye-gap: 18px;
+  --eye-color: #fff;
+}
+
+/* Shapes (Home – eigene "-h"-Namen, expressive Gesichter nach esta.jpeg) */
+.fm-blob-shape--blue-h {
+  width: 80px;
+  height: 122px;
+  border-radius: 38px 42px 38px 34px;
+  background: linear-gradient(145deg, #3a86ff, #1f6feb);
+  animation-delay: 0.6s;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--green-h {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 48% 46% 52%;
+  background: linear-gradient(145deg, #22c97a, #12a45c);
+  animation-delay: 0.9s;
+  --eye-gap: 16px;
+  --eye-w: 14px;
+  --eye-h: 7px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--yellow-h {
+  width: 126px;
+  height: 126px;
+  border-radius: 46% 46% 42% 42%;
+  background: linear-gradient(145deg, #ffd84a, #f9b500);
+  animation-delay: 0.2s;
+  --eye-gap: 20px;
+  --eye-w: 15px;
+  --eye-h: 7px;
+  --eye-border: 3.5px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--black-h {
+  width: 64px;
+  height: 100px;
+  border-radius: 34px;
+  background: #15171c;
+  animation-delay: 1.1s;
+  --eye-gap: 11px;
+  --eye-w: 11px;
+  --eye-h: 5px;
+  --eye-color: #3a86ff;
+}
+.fm-blob-shape--pink-h {
+  width: 118px;
+  height: 86px;
+  border-radius: 60px 60px 28px 28px;
+  background: linear-gradient(145deg, #ff7d92, #ff5c6e);
+  animation-delay: 0.3s;
+  --eye-gap: 18px;
+  --eye-color: #15171c;
+}
+
+.fm-blob-shape--blue-sm {
+  width: 72px;
+  height: 100px;
+  border-radius: 36px 40px 34px 30px;
+  background: linear-gradient(145deg, #9db3dd, #7a94ca);
+  animation-delay: 0.5s;
+  --eye-gap: 12px;
+  --eye-w: 10px;
+  --eye-h: 5px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--green-sm {
+  width: 86px;
+  height: 88px;
+  border-radius: 52% 46% 48% 50%;
+  background: linear-gradient(145deg, #96c286, #74a862);
+  animation-delay: 0.8s;
+  --eye-gap: 14px;
+  --eye-w: 12px;
+  --eye-h: 6px;
+  --eye-color: #15171c;
+  --arm-color: #85b674;
+}
+.fm-blob-shape--yellow-sm {
+  width: 104px;
+  height: 124px;
+  border-radius: 48% 44% 40% 44%;
+  background: linear-gradient(145deg, #ffd84a, #f9b500);
+  animation-delay: 0.2s;
+  --eye-gap: 16px;
+  --eye-w: 13px;
+  --eye-h: 6px;
+  --eye-border: 3px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--purple-sm {
+  width: 84px;
+  height: 112px;
+  border-radius: 44% 40% 38% 42%;
+  background: linear-gradient(145deg, #c9b8f0, #a893e0);
+  animation-delay: 0.4s;
+  --eye-gap: 13px;
+  --eye-w: 11px;
+  --eye-h: 5px;
+  --eye-color: #15171c;
+}
+.fm-blob-shape--orange-sm {
+  width: 98px;
+  height: 86px;
+  border-radius: 52px 42px 32px 46px;
+  background: linear-gradient(145deg, #ff9a52, #f9752a);
+  animation-delay: 0.3s;
+  --eye-gap: 15px;
+  --eye-w: 11px;
+  --eye-h: 5px;
+  --eye-color: #15171c;
+  --arm-color: #fb8a3c;
+}
+
+/* Facial features (shared, driven by CSS variables per shape) */
+.fm-blob__eyes {
+  position: absolute;
+  top: 38%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--eye-gap, 13px);
+}
+.fm-blob__eyes:not(.fm-blob__eyes--open)::before,
+.fm-blob__eyes:not(.fm-blob__eyes--open)::after {
+  content: '';
+  display: block;
+  width: var(--eye-w, 12px);
+  height: var(--eye-h, 6px);
+  border: var(--eye-border, 3px) solid var(--eye-color, #fff);
+  border-top: 0;
+  border-radius: 0 0 var(--eye-w, 12px) var(--eye-w, 12px);
+  transition: transform 0.2s ease;
+}
+
+/* Zwinkern (z.B. der gelbe Blob): ein Auge bleibt der geschlossene Bogen,
+   das andere wird ein offener Punkt. */
+.fm-blob__eyes--wink::after {
+  border: 0;
+  width: calc(var(--eye-w, 12px) * 0.6);
+  height: calc(var(--eye-w, 12px) * 0.6);
+  border-radius: 50%;
+  background: var(--eye-color, #15171c);
+  transform: translateY(3px);
+}
+
+/* Offene Augen (Pupille + Augenbraue) – für alle Gesichter ohne "smile"
+   (näher am Referenz-Design animation/Mood-Blobs.html: runde Pupillen mit
+   eigenständigem, kippbarem Braue-Strich statt nur geschlossener Bögen). */
+.fm-blob__eyes--open {
+  align-items: flex-end;
+}
+.fm-blob__eye {
+  position: relative;
+  width: calc(var(--eye-w, 12px) * 1.05);
+  height: calc(var(--eye-w, 12px) * 1.05 + 14px);
+}
+.fm-blob__pupil {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: calc(var(--eye-w, 12px) * 1.05);
+  height: calc(var(--eye-w, 12px) * 1.05);
+  border-radius: 50%;
+  background: var(--eye-color, #15171c);
+  transform: translateX(-50%);
+}
+.fm-blob__brow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--eye-w, 12px) * 1.6);
+  height: 4.5px;
+  background: var(--eye-color, #15171c);
+  transform: translateX(-50%) rotate(var(--brow-rot, 0deg));
+  transition: transform 0.3s ease;
+}
+.fm-blob__eye--left .fm-blob__brow {
+  --brow-rot: var(--brow-tilt-l, -8deg);
+  clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 70%);
+}
+.fm-blob__eye--right .fm-blob__brow {
+  --brow-rot: var(--brow-tilt-r, 8deg);
+  clip-path: polygon(0% 0%, 100% 30%, 100% 70%, 0% 100%);
+}
+
+/* Böser Blick für den orangenen Blob: Augenbrauen zur Mitte hin nach unten
+   gezogen, wie zusammengekniffen. Je mehr "--happy" (0 = Ruhe, 1 = durchgehend
+   gereibt), desto mehr entspannen sie sich wieder – kontinuierlich. */
+.fm-blob-shape--orange-sm .fm-blob__eye--left .fm-blob__brow {
+  --brow-rot: calc(22deg * (1 - var(--happy, 0)));
+}
+.fm-blob-shape--orange-sm .fm-blob__eye--right .fm-blob__brow {
+  --brow-rot: calc(-22deg * (1 - var(--happy, 0)));
+}
+
+/* Besorgter Blick (lila + blauer Blob): innere Braue-Enden nach oben
+   gezogen (Gegenrichtung zum wütenden Blick). */
+.fm-blob-shape--purple-sm .fm-blob__eye--left .fm-blob__brow,
+.fm-blob-shape--blue-sm .fm-blob__eye--left .fm-blob__brow,
+.fm-blob-shape--blue-h .fm-blob__eye--left .fm-blob__brow {
+  --brow-rot: -16deg;
+}
+.fm-blob-shape--purple-sm .fm-blob__eye--right .fm-blob__brow,
+.fm-blob-shape--blue-sm .fm-blob__eye--right .fm-blob__brow,
+.fm-blob-shape--blue-h .fm-blob__eye--right .fm-blob__brow {
+  --brow-rot: 16deg;
+}
+
+/* Wütender Blick (pinker Blob): wie beim orangenen Blob zusammengekniffene
+   Brauen, die sich beim Reiben wieder entspannen. */
+.fm-blob-shape--pink-h .fm-blob__eye--left .fm-blob__brow {
+  --brow-rot: calc(20deg * (1 - var(--happy, 0)));
+}
+.fm-blob-shape--pink-h .fm-blob__eye--right .fm-blob__brow {
+  --brow-rot: calc(-20deg * (1 - var(--happy, 0)));
+}
+
+/* Überraschter Blick (schwarzer Blob): Brauen als sanfter Bogen statt
+   gerader, gekippter Strich – plus rundem, offenem Mund. */
+.fm-blob-shape--black-h .fm-blob__brow {
+  clip-path: none;
+  background: none;
+  border: 2.5px solid var(--eye-color, #3a86ff);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  width: calc(var(--eye-w, 12px) * 1.3);
+  height: 6px;
+  --brow-rot: 0deg;
+}
+.fm-blob-shape--black-h .fm-blob__eyes {
+  top: 30%;
+}
+.fm-blob-shape--black-h .fm-blob__mouth--o {
+  top: 70%;
+}
+
+.fm-blob__mouth {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Lächeln (Standard-Ausdruck, z.B. der gelbe Blob) */
+.fm-blob__mouth--smile {
+  border: 3.5px solid #15171c;
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+}
+.fm-blob-shape--yellow-sm .fm-blob__mouth--smile {
+  width: 18px;
+  height: 9px;
+  border-width: 3px;
+}
+
+/* Seriös: schlichter, gerader Strich (z.B. der blaue Blob) */
+.fm-blob__mouth--flat {
+  width: 18px;
+  height: 3.5px;
+  background: #15171c;
+  border-radius: 999px;
+  opacity: calc(1 - var(--happy, 0));
+}
+
+/* Verärgert: umgekehrter Bogen (z.B. der pinke Blob) */
+.fm-blob__mouth--frown {
+  top: 64%;
+  border: 3.5px solid #15171c;
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  opacity: calc(1 - var(--happy, 0));
+}
+
+/* Überrascht: kleiner, runder offener Mund (z.B. der schwarze Blob) */
+.fm-blob__mouth--o {
+  width: 11px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--eye-color, #15171c);
+  opacity: calc(1 - var(--happy, 0) * 0.5);
+}
+
+/* Kein Mund im Ruhezustand */
+.fm-blob__mouth--hidden {
+  border: 3.5px solid #15171c;
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  opacity: 0;
+}
+
+/* Lächeln-Overlay: blendet beim Reiben/Antippen sanft proportional zu
+   --happy ein (0 = unsichtbar, 1 = volles Lächeln) statt abrupt zu wechseln. */
+.fm-blob__mouth--overlay {
+  border: 3.5px solid #15171c;
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  opacity: var(--happy, 0);
+}
+
+/* Nur leichtes Wippen beim reinen Vorbeifahren mit der Maus (kein Lächeln) */
+@keyframes fmNudge {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.03) rotate(-2deg);
+  }
+}
+.fm-blob-wrap:hover .fm-blob-shape {
+  animation: fmNudge 1.1s ease-in-out infinite;
+}
+
+/* Kitzel-Wackeln: Amplitude wächst mit --happy, wird also beim Reiben
+   immer ausgelassener statt sofort auf volle Stärke zu springen. */
+@keyframes fmGiggle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(calc(1 + 0.08 * var(--happy, 0))) rotate(calc(-4deg * var(--happy, 0)));
+  }
+  40% {
+    transform: scale(calc(1 - 0.03 * var(--happy, 0))) rotate(calc(3deg * var(--happy, 0)));
+  }
+  60% {
+    transform: scale(calc(1 + 0.08 * var(--happy, 0))) rotate(calc(-3deg * var(--happy, 0)));
+  }
+  80% {
+    transform: scale(calc(1 - 0.01 * var(--happy, 0))) rotate(calc(2deg * var(--happy, 0)));
+  }
+}
+.fm-blob-wrap.is-active .fm-blob-shape,
+.fm-blob-wrap:active .fm-blob-shape {
+  animation: fmGiggle 0.5s ease-in-out infinite;
+}
+
+/* Verschränkte Arme (z.B. grüner + oranger Blob), wie in der
+   Referenz-Illustration – zwei sich kreuzende, abgerundete Balken in der
+   Blob-eigenen Farbe, unten mittig vor dem Körper. */
+.fm-blob__arms {
+  position: absolute;
+  left: 0;
+  top: 46%;
+  width: 100%;
+  height: 42%;
+  z-index: 1;
+}
+.fm-blob__arm {
+  position: absolute;
+  top: 8%;
+  width: 58%;
+  height: 27%;
+  border-radius: 999px;
+  background: var(--arm-color, currentColor);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+.fm-blob__arm--left {
+  left: -8%;
+  transform: rotate(38deg);
+  transform-origin: left center;
+}
+.fm-blob__arm--right {
+  right: -8%;
+  transform: rotate(-38deg);
+  transform-origin: right center;
+}
+
+.fm-blob__cord {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 4px;
+  border-radius: 999px;
+  background: #3a86ff;
+}

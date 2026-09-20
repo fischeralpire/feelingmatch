@@ -1,0 +1,64 @@
+.fm-splash {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fm-splash__lang {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.fm-splash__logo {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 0;
+}
+.fm-splash__logo img {
+  width: 220px;
+  max-width: 80%;
+  height: auto;
+}
+
+.fm-splash__copy {
+  text-align: center;
+  padding: 0 6px;
+  margin-top: 8px;
+}
+.fm-splash__sub {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 14px auto 0;
+  max-width: 300px;
+}
+
+.fm-splash__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 24px;
+}
+
+.fm-splash__guestList {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.fm-splash__guestList li {
+  margin-bottom: 6px;
+}

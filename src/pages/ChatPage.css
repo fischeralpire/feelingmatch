@@ -1,0 +1,134 @@
+.fm-chat {
+  display: flex;
+  flex-direction: column;
+  /* 100vh bleibt in vielen Mobile-Browsern starr, wenn die virtuelle
+     Tastatur aufgeht, wodurch das Eingabefeld dahinter verschwindet statt
+     sich nach oben zu verschieben. dvh passt sich der tatsächlich
+     sichtbaren Höhe an; 100vh bleibt als Fallback für ältere Browser. */
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-1);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.fm-chat__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 12px;
+  box-shadow: var(--shadow-soft);
+  margin: 14px 14px 0;
+}
+.fm-chat__person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fm-chat__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #1f6feb, #ff6eb6);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.fm-chat__dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff6eb6;
+  margin-right: 5px;
+}
+.fm-chat__timer {
+  font-weight: 900;
+  color: var(--red);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: inherit;
+}
+
+.fm-chat__extend-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.fm-chat__extend-options .fm-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.fm-chat__messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fm-chat__system {
+  text-align: center;
+  align-self: center;
+  background: var(--surface-muted);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.fm-chat__bubble {
+  max-width: 80%;
+  padding: 12px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.fm-chat__bubble.is-other {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  border-radius: 18px 18px 18px 6px;
+  align-self: flex-start;
+}
+.fm-chat__bubble.is-me {
+  background: var(--text);
+  color: var(--bg-1);
+  border-radius: 18px 18px 6px 18px;
+  align-self: flex-end;
+}
+.fm-chat__bubble.is-blocked {
+  background: var(--red-light);
+  color: #9c2b38;
+}
+
+.fm-chat__footer {
+  padding: 0 14px 18px;
+  background: var(--bg-1);
+}
+.fm-chat__input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 10px;
+}
+.fm-chat__send {
+  border: 0;
+  background: var(--yellow);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #15171c;
+  flex-shrink: 0;
+}

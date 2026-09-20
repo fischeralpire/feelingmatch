@@ -1,0 +1,142 @@
+/* Bewusst zurückhaltend gestaltet (Grautöne, kein Gelb/Bunt/Emoji) – der
+   Ton-Wechsel gegenüber dem sonst verspielten Look ist gewollt, siehe
+   data/safetyCheck.js. */
+
+.fm-result-save {
+  margin-bottom: 18px;
+}
+.fm-result-save__confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--green);
+  font-weight: 700;
+  background: var(--green-light);
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  margin-bottom: 18px;
+}
+
+.fm-burden-check {
+  text-align: left;
+  background: var(--surface-muted);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.fm-burden-check__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.fm-burden-check__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.fm-burden-check__chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.fm-burden-check__chip.is-active {
+  background: var(--text);
+  color: var(--bg-1);
+  border-color: var(--text);
+}
+
+.fm-safety-check {
+  text-align: left;
+  background: var(--surface-muted);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.fm-safety-check__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.fm-safety-check__actions {
+  display: flex;
+  gap: 8px;
+}
+.fm-safety-check__btn {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-pill);
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.fm-safety-check__btn--primary {
+  background: var(--text);
+  color: var(--bg-1);
+  border-color: var(--text);
+}
+.fm-safety-check__reassurance {
+  text-align: left;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: var(--surface-muted);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.fm-crisis-card {
+  text-align: left;
+  background: var(--surface-muted);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.fm-crisis-card__text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.fm-crisis-card__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--text);
+  color: var(--bg-1);
+  border-radius: var(--radius-pill);
+  padding: 13px 16px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.fm-crisis-card__alt {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 8px;
+}
+.fm-crisis-card__emergency {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}

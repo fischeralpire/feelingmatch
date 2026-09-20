@@ -1,0 +1,61 @@
+.fm-avatarunlock-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 450;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fmFade 0.2s ease;
+}
+
+.fm-avatarunlock-card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 26px 22px 22px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.fm-avatarunlock-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--accent-from), var(--accent-to));
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+}
+
+.fm-avatarunlock-card__images {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.fm-avatarunlock-card__img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: var(--surface-muted);
+}
+
+.fm-avatarunlock-card__title {
+  font-size: 20px;
+  margin: 8px 0 4px;
+}
+
+.fm-avatarunlock-card__text {
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+.fm-avatarunlock-card__close {
+  width: 100%;
+}

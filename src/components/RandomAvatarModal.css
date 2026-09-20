@@ -1,0 +1,97 @@
+.fm-random-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fmFade 0.2s ease;
+}
+
+.fm-random-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 28px;
+  padding: 28px 24px 24px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.fm-random-card__glow {
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(circle, var(--accent-solid) 0%, transparent 60%);
+  opacity: 0.35;
+  animation: fmGlowPulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes fmGlowPulse {
+  0%, 100% { opacity: 0.25; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.45; transform: translateX(-50%) scale(1.08); }
+}
+
+.fm-random-card__sparkle {
+  position: absolute;
+  color: var(--accent-solid);
+  animation: fmSparkleTwinkle 1.6s ease-in-out infinite;
+}
+.fm-random-card__sparkle--1 { top: 18px; left: 22px; animation-delay: 0s; }
+.fm-random-card__sparkle--2 { top: 32px; right: 28px; animation-delay: 0.4s; }
+.fm-random-card__sparkle--3 { bottom: 92px; left: 30px; animation-delay: 0.8s; }
+
+@keyframes fmSparkleTwinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(15deg); }
+}
+
+.fm-random-card__img {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  border-radius: 24px;
+  margin: 4px auto 6px;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(249, 198, 35, 0.45));
+}
+
+.fm-random-card__title {
+  position: relative;
+  font-size: 24px;
+  margin: 6px 0 4px;
+}
+
+.fm-random-card__text {
+  position: relative;
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+.fm-random-card__claim {
+  position: relative;
+  width: 100%;
+}
+
+.fm-random-card__skip {
+  position: relative;
+  width: 100%;
+  background: none;
+  border: 0;
+  color: var(--text-faint);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 12px;
+  margin-top: 4px;
+  cursor: pointer;
+}

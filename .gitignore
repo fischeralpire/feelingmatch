@@ -1,0 +1,25 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+.DS_Store
+.env
+.env.local
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+.vercel
+.env*
+CREDENTIALS.md
+PROGRESS.md
+
+# Unkomprimierte Original-Avatarbilder (~13MB) – die für die App genutzten,
+# verkleinerten Versionen liegen in public/avatars und sind eingecheckt.
+estados-fotos/
+
+# Rohablage der Nutzerin für gelieferte Design-Assets (z.B. die
+# Mood-Blobs-Animation) – die tatsächlich genutzte Kopie liegt in
+# public/ und ist eingecheckt.
+animation/
